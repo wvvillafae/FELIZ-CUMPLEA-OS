@@ -46,7 +46,6 @@
             background-color: rgba(179, 255, 0, 0.7);
             animation-duration: .9s;
         }
-        
 
         @keyframes explosion {
             0% {
@@ -190,7 +189,7 @@
         .music {
             position: fixed;
             bottom: 3px;
-            right: 1146px;
+            right: 10px; /* Ajusté el valor para que se vea bien en pantalla pequeña */
             width: 150px; /* Tamaño del reproductor de audio */
             z-index: 10;
             background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
@@ -202,16 +201,59 @@
         /* Estilo para el pudín de cumpleaños */
         .pudin {
             width: 200px;
-            margin-left: 250px;
-
+            margin-left: 0px; /* Ajusté la alineación para pantallas más pequeñas */
+            margin-right: auto;
             animation: bounce 1.1s infinite;
         }
 
         .pudin img {
             width: 70%;
-    
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(255, 0, 0, 0.5);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column; /* Cambia la disposición a columna en pantallas más pequeñas */
+                align-items: center;
+            }
+
+            .carousel {
+                width: 80%; /* Aumenta el tamaño de la galería de imágenes en pantallas más pequeñas */
+            }
+
+            .message {
+                width: 80%; /* Ajusta el ancho del mensaje */
+                padding: 40px;
+            }
+
+            .cake img {
+                max-width: 100px; /* Ajusta el tamaño de la imagen de la torta */
+            }
+
+            .music {
+                bottom: 10px; /* Ajusta la posición del reproductor de música */
+                right: 10px; /* Ajusta la posición en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+            }
+
+            .message h2 {
+                font-size: 2em; /* Ajusta el tamaño del encabezado */
+            }
+
+            .message p {
+                font-size: 1.1em; /* Ajusta el tamaño de la fuente del mensaje */
+            }
+
+            .carousel img {
+                max-width: 100%;
+            }
         }
     </style>
     <script>
@@ -225,7 +267,6 @@
                 });
             }
 
-            // Automático: cambia la imagen cada 3 segundos
             setInterval(() => {
                 currentIndex = (currentIndex + 1) % images.length;
                 showImage(currentIndex);
@@ -240,7 +281,6 @@
         <h1>TE AMO MUCHO, FELIZ CUMPLEAÑOS❤️</h1>
     </header>
     
-    <!-- Confites que caen desde los bordes -->
     <div class="confeti">
         <div class="confeti-item" style="left: 5%; animation-delay: 0s;"></div>
         <div class="confeti-item" style="left: 15%; animation-delay: 0.2s;"></div>
@@ -259,6 +299,7 @@
             <img src="bebe.jpg" alt="Foto 1" class="active">
             <img src="bebe1.jpg" alt="Foto 2">
             <img src="bebe2.jpg" alt="Foto 3">
+            <img src="bebe3.jpg" alt="Foto 4">
             <img src="bebe4.jpg" alt="Foto 5">
             <img src="bebe6.jpg" alt="Foto 6">
             <img src="bebe7.jpg" alt="Foto 7">
@@ -266,7 +307,6 @@
         </div>
 
         <div class="message">
-            <!-- Pudín de cumpleaños encima del mensaje -->
             <div class="pudin">
                 <img src="pastel.png" alt="Pudín de Cumpleaños">
             </div>
@@ -293,3 +333,4 @@
     </footer>
 </body>
 </html>
+
